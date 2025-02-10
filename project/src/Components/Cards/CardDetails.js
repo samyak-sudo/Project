@@ -19,7 +19,7 @@ const CardDetails = () => {
     let api=`https://rickandmortyapi.com/api/character/${id}`
     const statusClass = status === "Alive" ? "status-alive" :status === "Dead" ? "status-dead" :"status-unknown";
     useEffect(()=>{
-    
+      
         (async function(){
           let data= await fetch(api).then(res=>res.json())
           setfetchData(data);
