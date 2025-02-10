@@ -8,6 +8,7 @@ import Search from './Components/Search/Search';
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import Episodes from "./Pages/Episodes";
 import Location from "./Pages/Location";
+// import Favorite from "./Pages/Locaton";
 import CardDetails from './Components/Cards/CardDetails';
 
 function App(){
@@ -48,13 +49,9 @@ const Home=({pageNumber,setpageNumber,searchname,setsearchname})=> {
   
   return (
     <div className="App">
-      {/* <Header /> */}
-      {/* <Search setpageNumber ={setpageNumber} setsearchname={setsearchname}/> */}
-      {/* <Character id="characters-section" /> */}
       <div className="container">
       <div className="row">
         <div className="col-3">
-        {/* <Filters/> */}
         </div>
         <div className="col-8">
         <div className="row">
@@ -62,7 +59,6 @@ const Home=({pageNumber,setpageNumber,searchname,setsearchname})=> {
         </div>
         </div>
       </div>
-
       </div>
       <Pagination info={info} pageNumber={pageNumber} setpageNumber={setpageNumber}/>
     </div>

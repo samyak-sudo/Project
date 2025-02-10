@@ -1,3 +1,4 @@
+/* Global Styles */
 .App {
   text-align: center;
 }
@@ -27,83 +28,84 @@
 .App-link {
   color: #61dafb;
 }
-.header{
-  /* margin-top: 30px; */
-  height:40px;
-  display:flex;
+
+/* Header Styles */
+.header {
+  height: 40px;
+  display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
-  align-items:center;
+  align-items: center;
   justify-content: space-between;
-  color:white;
+  color: white;
   background-color: rgb(196, 195, 195);
-  padding-top:10px;
-  padding:20px;
+  padding-top: 10px;
+  padding: 20px;
 }
+
 .Ricky {
   font-size: 2rem !important;
   color: black !important;
   text-decoration: none !important;
   font-weight: bold;
 }
-.character_btn{
+
+.character_btn {
   background-color: rgb(196, 195, 195);
   border: none;
-  color:rgb(84, 84, 197);
+  color: rgb(84, 84, 197);
   font-weight: 600;
-  font-size:1.5rem;
-  display:flex;
+  font-size: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: right;
   cursor: pointer;
 }
-.active{
+
+.active {
   border-bottom: 1.5px solid #0b5eD7;
   font-weight: bold;
   color: #0b5eD7;
 }
-/* Overall container for the grid */
+
+/* Cards Container */
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 20px; /* Spacing between cards */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   padding: 20px;
 }
 
-/* Styling for each card */
 .card {
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   padding: 15px;
   text-align: center;
-  transition: transform 0.3s ease; /* Smooth hover effect */
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-10px); /* Hover effect to lift the card */
+  transform: translateY(-10px);
 }
 
-/* Styling for the image */
 .card img {
   width: 100%;
-  height:300px; /* Set a fixed height */
-  object-fit: obtain; /* Ensure image covers the container without distortion */
-  border-radius: 8px;
-  margin-bottom: 15px; /* Space below the image */
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 15px;
 }
 
-/* Content section inside the card */
 .card .content {
   font-size: 16px;
 }
 
-/* Styling for the name and species */
 .card .content div {
   margin-bottom: 10px;
 }
 
-/* Styling for the badge (status) */
 .status-badge {
   display: inline-block;
   padding: 5px 10px;
@@ -113,72 +115,42 @@
   text-transform: capitalize;
 }
 
-/* Green for Alive status */
 .status-alive {
-  background-color: #28a745; /* Green */
+  background-color: #28a745;
 }
 
-/* Red for Dead status */
 .status-dead {
-  background-color: #dc3545; /* Red */
+  background-color: #dc3545;
 }
 
-/* Gray for Unknown status */
 .status-unknown {
-  background-color: #6c757d; /* Gray */
+  background-color: #6c757d;
 }
 
-
-
-
-
-
-/* /**   / */
-/* .Character{
-  height:150px;
-  padding-top:20px;
-  background-color: white;
-}
-.characters_heading
-{
-  font-size:2rem;
-  color:black;
-  align-items: center;
-  padding:1px;
-} */
-.Search_form{
-   gap:20px;
-   display:flex;
-   justify-content: center !important;
-   align-items: center !important;
-   margin-left:150px !important;
-   /* margin-right:150px !important; */
-
+/* Search Form Styles */
+.Search_form {
+  gap: 20px;
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-left: 150px !important;
 }
 
-/* .info{
-  font-size:0.5rem;
-  display:flex;
-  flex-direction: column;
-} */
-.Search_character
-{
-      width:1000px;
-}
-.Search_btn
-{
-    padding-left:10px;
-    background-color:blue;
-    color:white;
-    height:30px;
-    width:100px;
-    box-shadow: 1px 3px 9px rgba($color: #000000, $alpha:0.25);
-    border-radius: 5px;
-
+.Search_character {
+  width: 1000px;
 }
 
-/*//////////////////////////PAGINATION//////////////////////////////*/
+.Search_btn {
+  padding-left: 10px;
+  background-color: blue;
+  color: white;
+  height: 30px;
+  width: 100px;
+  box-shadow: 1px 3px 9px rgba(#000000, 0.25);
+  border-radius: 5px;
+}
 
+/* Pagination Styles */
 .pagination {
   display: flex;
   justify-content: center;
@@ -211,7 +183,6 @@
   border: none;
 }
 
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -220,3 +191,125 @@
     transform: rotate(360deg);
   }
 }
+
+/* Media Queries */
+
+/* Mobile View (max-width: 480px) */
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .Ricky {
+    font-size: 1.5rem;
+  }
+
+  .Search_form {
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Search_btn {
+    width: 80%;
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+
+  .card img {
+    height: 250px;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-link {
+    padding: 10px;
+  }
+}
+
+/* Tablet View (max-width: 768px) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+  }
+
+  .Search_form {
+    width: 90%;
+    margin-left: 10px;
+  }
+
+  .Search_btn {
+    width: 100px;
+    font-size: 1.1rem;
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+  }
+
+  .card img {
+    height: 270px;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .nav-link {
+    padding: 15px;
+  }
+}
+
+/* Laptop View (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .Search_form {
+    width: 80%;
+    margin-left: 50px;
+  }
+
+  .Search_btn {
+    width: 120px;
+    font-size: 1.2rem;
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on laptop */
+  }
+
+  .card img {
+    height: 280px;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .nav-link {
+    padding: 20px;
+  }
+}
+
