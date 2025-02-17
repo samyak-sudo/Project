@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactPaginate from "react-paginate";
+import { useSelector,useDispatch } from "react-redux";
+import { ChangePage } from "../../redux";
+import { fetchCharactersPage } from "../../redux";
 
-const Pagination = ({ info, pageNumber, setpageNumber }) => {
+
+const Pagination = () => {
   const handlePageChange = (data) => {
-    setpageNumber(data.selected + 1); // API pages start from 1
+    dispatch(ChangePage(data.selected + 1)); 
   };
+  const dispatch = useDispatch();
+  const {characters,pageNum}=useSelector((state)=>state.character)
+  const searchName=useSelector((state)=>state.search.searchName)
+  useEffect(() => {
+    if(!searchName)dispatch(fetchCharactersPage(pageNum));
+    }, [dispatch,pageNum,searchName]);
 
   return (
     <ReactPaginate
@@ -20,9 +30,9 @@ const Pagination = ({ info, pageNumber, setpageNumber }) => {
       breakLinkClassName="page-link"
       previousLabel="Previous"
       nextLabel="Next"
-      pageCount={info?.pages || 1} // Ensure it has a valid number
+      pageCount={characters?.info?.pages || 1} // Ensure it has a valid number
       onPageChange={handlePageChange}
-      forcePage={pageNumber - 1} // Adjust index to start from 0
+      forcePage={pageNum - 1} // Adjust index to start from 0
     />
   );
 };

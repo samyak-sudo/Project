@@ -1,0 +1,1 @@
+export const SET_SEARCH_NAME='SET_SEARCH_NAME'
