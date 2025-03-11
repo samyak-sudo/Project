@@ -60,7 +60,11 @@ const App = () => {
     <Router>
       <div className="App" data-testid="app-container">
         <Search />
-        <h1 style={{ textAlign: 'center' }}>Characters</h1>
+        <h1 style={{ 
+          textAlign: 'center',
+          fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
+          margin: '1rem 0'
+        }}>Characters</h1>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:id" element={<CardDetails />} />

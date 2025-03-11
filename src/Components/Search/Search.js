@@ -27,41 +27,40 @@ const Search = () => {
 
     return (
         <div className="header">
-            <Link to="/" className="Ricky">Ricky & Morty</Link>
-            <form 
-                role="form"
-                className="Search_form"
-                style={{ alignItems: "center", justifyContent: "center" }}
-                onSubmit={handleSubmit}
-            >
-                <input
-                    style={{ alignItems: "center", justifyContent: "center", height: "20px" }}
-                    value={searchName}
-                    onChange={handleSearchChange}
-                    placeholder="Search Characters"
-                    type="text"
-                    className={styles.input}
-                    data-testid="search-input"
-                />
-                <button
-                    type="submit"
-                    style={{ alignItems: "center", justifyContent: "center" }}
-                    className="Search_btn"
+            <div className="nav-container">
+                <Link to="/" className="Ricky">Ricky & Morty</Link>
+                <form 
+                    role="form"
+                    className="Search_form"
+                    onSubmit={handleSubmit}
                 >
-                    <strong>Search</strong>
-                </button>
-            </form>
-            <nav className="nav">
-                <NavLink style={{ padding: "30px", color: "black" }} to="/" className="nav-link">
-                    Characters
-                </NavLink>
-                <NavLink style={{ padding: "30px", color: "black" }} to="/episodes" className="nav-link">
-                    Episodes
-                </NavLink>
-                <NavLink style={{ padding: "30px", color: "black" }} to="/location" className="nav-link">
-                    Location
-                </NavLink>
-            </nav>
+                    <input
+                        value={searchName}
+                        onChange={handleSearchChange}
+                        placeholder="Search Characters"
+                        type="text"
+                        className={styles.input}
+                        data-testid="search-input"
+                    />
+                    <button
+                        type="submit"
+                        className="Search_btn"
+                    >
+                        Search
+                    </button>
+                </form>
+                <nav className="nav">
+                    <NavLink to="/" className="nav-link">
+                        Characters
+                    </NavLink>
+                    <NavLink to="/episodes" className="nav-link">
+                        Episodes
+                    </NavLink>
+                    <NavLink to="/location" className="nav-link">
+                        Location
+                    </NavLink>
+                </nav>
+            </div>
         </div>
     );
 };
